@@ -23,4 +23,4 @@ jobs:
           git config --global user.name Docs deploy
           git config --global user.email docs@dummy.bot.com
       - name: Build docs website and API reference
-        run:  mike deploy preview --push
+        run:  mike deploy unreleased --push
