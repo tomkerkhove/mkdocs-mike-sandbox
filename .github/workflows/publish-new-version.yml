@@ -1,9 +1,8 @@
-name: Publish Preview Docs
+name: Publish Official Docs
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   docs:
@@ -22,5 +21,7 @@ jobs:
         run: |
           git config --global user.name Docs deploy
           git config --global user.email docs@dummy.bot.com
-      - name: Build docs website and API reference
-        run:  mike deploy preview --push
+      - name: Publish new doc version
+        run:  mike deploy --push --update-aliases ${{ github.event.release.tag_name }} latest
+      - name: Change default latest version
+        run:  mike set-default --push latest
