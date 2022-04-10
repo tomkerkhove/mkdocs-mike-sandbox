@@ -1,2 +1,2 @@
-# GitHub Template
-GitHub template for all my future GitHub repos
+# MkDocs & Mike Sandbox
+Sandbox to play around with MkDocs & Mike plugin for versioning.
